@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Kualifikasi Piala Dunia: Bahrain vs Indonesia</title>
+  <link rel="icon" href="https://png.pngtree.com/png-clipart/20240629/original/pngtree-the-symbol-of-the-indonesian-garuda-png-image_15448024.png" type="image/png">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: #ffffff; /* Warna putih untuk navbar */
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      flex-wrap: wrap; /* Memungkinkan item navbar untuk membungkus */
+    }
+
+    .navbar a {
+      color: #333; /* Warna teks navbar */
+      text-decoration: none;
+      font-size: 1rem; /* Ukuran font yang lebih kecil untuk responsif */
+      margin: 5px; /* Jarak antara item navbar */
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #007BFF; /* Warna saat hover */
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      margin-top: 50px;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 14px 28px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .link {
+      display: none;
+      margin-top: 30px;
+      font-size: 1.125rem;
+      color: #007BFF;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .link.visible {
+      opacity: 1;
+    }
+
+    #countdown {
+      display: none;
+      font-size: 1rem;
+      margin-top: 15px;
+      color: #555;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #countdown.visible {
+      opacity: 1;
+    }
+
+    .footer {
+      margin-top: 60px; /* Menambah jarak atas untuk footer */
+      padding: 20px 0;
+      background-color: #f0f0f0; /* Warna abu-abu untuk footer */
+      color: #333;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer p {
+      margin: 0; /* Hapus margin untuk footer */
+    }
+
+    .telegram-link {
+      margin-top: 10px; /* Jarak di atas tautan Telegram */
+      font-size: 1.125rem; /* Ukuran font yang lebih besar */
+      color: #007BFF; /* Warna link Telegram */
+      text-decoration: none; /* Hapus garis bawah */
+    }
+
+    .telegram-link:hover {
+      text-decoration: underline; /* Garis bawah saat hover */
+    }
+
+    @media screen and (max-width: 480px) {
+      .navbar {
+        flex-direction: column; /* Menyusun navbar secara vertikal di mobile */
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 0.875rem;
+        padding: 10px 20px;
+      }
+
+      .link {
+        font-size: 1rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem; /* Ukuran font navbar di mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div>
+      <a href="#home">Beranda</a>
+      <a href="#about">Tentang</a>
+      <a href="#matches">Pertandingan</a>
+      <a href="#contact">Kontak</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Kualifikasi Piala Dunia 2026</h1>
+    <h2>Bahrain vs Indonesia</h2>
+    <br>
+    <p>Saksikan pertandingan seru antara Bahrain dan Indonesia dalam babak kualifikasi Piala Dunia! Klik tombol di bawah untuk mendapatkan link untuk menonton langsung dan jangan lewatkan aksi mendebarkan dari kedua tim!</p>
+    <button id="loadBtn" onclick="loadLink()">Dapatkan Link Tontonan</button>
+    <div id="countdown">Memuat dalam <span id="seconds">5</span> detik...</div>
+    <a id="link1" class="link" href="https://contoh-link1.com" target="_blank">Link 1 Live Streaming</a>
+    <br>
+    <a id="link2" class="link" href="https://contoh-link2.com" target="_blank">Link 2 Live Streaming</a>
+
+    <div style="margin-top: 20px;">
+      <p>Join Channel Telegram Kami untuk Update Terbaru!</p>
+      <a href="https://t.me/contoh_channel" target="_blank" class="telegram-link">Bergabung di Telegram</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 Kualifikasi Piala Dunia. Semua hak dilindungi.</p>
+  </div>
+
+  <script>
+    function loadLink() {
+      const button = document.getElementById('loadBtn');
+      const countdown = document.getElementById('countdown');
+      const secondsDisplay = document.getElementById('seconds');
+      const link1 = document.getElementById('link1');
+      const link2 = document.getElementById('link2');
+      
+      let seconds = 5;
+
+      button.disabled = true;
+      button.innerHTML = 'Memuat...';
+      countdown.style.display = 'block';
+      setTimeout(() => {
+        countdown.classList.add('visible');
+      }, 100);
+
+      const interval = setInterval(() => {
+        seconds -= 1;
+        secondsDisplay.innerHTML = seconds;
+
+        if (seconds === 0) {
+          clearInterval(interval);
+          countdown.classList.remove('visible');
+
+          setTimeout(() => {
+            button.style.display = 'none';
+            link1.style.display = 'inline';
+            link2.style.display = 'inline';
+
+            setTimeout(() => {
+              link1.classList.add('visible');
+              link2.classList.add('visible');
+            }, 100);
+          }, 500);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
